@@ -1,0 +1,14 @@
+- name: yum install wget
+  yum:
+    name: wget
+    state: present
+- name: download google bbr
+  shell: wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbrsh && chmod +x bbr.sh
+  tags: step_1, download_bbr
+- name: install google bbr
+  shell: |
+    set timeout 300
+    spawn ./bbr.sh
+    
+    expect ""
+    send "\n"

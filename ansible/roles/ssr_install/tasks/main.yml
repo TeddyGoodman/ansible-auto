@@ -1,0 +1,2 @@
+- include: ssr_install.yml
+  tags: ssr_install
